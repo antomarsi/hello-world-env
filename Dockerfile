@@ -1,11 +1,17 @@
 FROM node:latest-alpine
 
-ARG REACT_APP_MESSAGE="Default Message"
+ARG MESSAGE="Default Message"
 
 COPY . /app
 
 RUN yarn install
 
 WORKDIR /app
+
+
+EXPOSE 80
+
+ENV REACT_APP_MESSAGE=$MESSAGE
+ENV PORT=8080
 
 CMD ["yarn", "start"]
