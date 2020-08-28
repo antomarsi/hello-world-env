@@ -1,14 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import * as serviceWorker from "./serviceWorker";
+import helloWorld from "./hello_world.jpg";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <div className="App">
+      <header className="App-header">
+        <img src={helloWorld} alt="Hello World" className="fade-in" />
+        <p>This is a test server: {process.env.REACT_APP_MESSAGE}</p>
+      </header>
+    </div>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
